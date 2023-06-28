@@ -24,8 +24,6 @@ import uwu.lopyluna.create_dd.block.YIPPEEPartialModel;
 import uwu.lopyluna.create_dd.fluid.SussyWhiteStuff;
 import uwu.lopyluna.create_dd.item.Pipebomb;
 import uwu.lopyluna.create_dd.item.PipebombTab;
-import uwu.lopyluna.create_dd.worldgen.YummyOreFeatures;
-import uwu.lopyluna.create_dd.worldgen.YummyOrePlacedFeatures;
 
 
 @Mod(DDcreate.MOD_ID)
@@ -51,9 +49,6 @@ public class DDcreate
         Pipebomb.register();
         SussyWhiteStuff.register();
         YIPPEEPalette.register();
-
-        YummyOreFeatures.register(eventBus);
-        YummyOrePlacedFeatures.register(eventBus);
 
         eventBus.addListener(this::clientSetup);
 
