@@ -15,6 +15,7 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
+import uwu.lopyluna.create_dd.block.YIPPEE;
 import uwu.lopyluna.create_dd.block.YIPPEEPaletteStoneTypes;
 
 import javax.annotation.Nullable;
@@ -188,41 +189,23 @@ public class SussyWhiteStuff {
     public static BlockState getLavaInteraction(FluidState fluidState) {
         Fluid fluid = fluidState.getType();
         if (fluid.isSame(SussyWhiteStuff.VANILLA.get()))
-            return YIPPEEPaletteStoneTypes.potassic.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.potassic_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.VANILLA_MILKSHAKE.get()))
-            return YIPPEEPaletteStoneTypes.potassic.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.potassic_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.STRAWBERRY.get()))
-            return AllPaletteStoneTypes.CRIMSITE.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.crimsite_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.STRAWBERRY_MILKSHAKE.get()))
-            return AllPaletteStoneTypes.CRIMSITE.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.crimsite_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.GLOWBERRY.get()))
-            return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.ochrum_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.GLOWBERRY_MILKSHAKE.get()))
-            return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.ochrum_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.CARAMEL.get()))
-            return AllPaletteStoneTypes.VERIDIUM.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.veridium_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.CARAMEL_MILKSHAKE.get()))
-            return AllPaletteStoneTypes.VERIDIUM.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.veridium_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.CREAM.get()))
-            return AllPaletteStoneTypes.ASURINE.getBaseBlock()
-                    .get()
-                    .defaultBlockState();
+            return YIPPEE.asurine_cobble.getDefaultState();
         if (fluid.isSame(SussyWhiteStuff.HOT_CHOCOLATE.get()))
             return AllPaletteStoneTypes.SCORCHIA.getBaseBlock()
                     .get()
