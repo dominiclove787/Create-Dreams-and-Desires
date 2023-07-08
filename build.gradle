@@ -17,7 +17,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 
-version = '0.0.2c.ALPHA'
+version = '0.0.3a.ALPHA'
 group = 'uwu.lopyluna.create_dd'
 archivesBaseName = "create_dd-${artifact_minecraft_version}"
 
@@ -110,10 +110,10 @@ repositories {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
-    /*maven {
+    maven {
         name = "ModMaven"
         url = "https://modmaven.dev"
-    }*/
+    }
 
     maven {
         url = 'https://www.cursemaven.com'
@@ -149,7 +149,7 @@ dependencies {
     //  runtimeOnly fg.deobf("vazkii.quark:Quark:r2.0-212.984")
     //  runtimeOnly fg.deobf("slimeknights.mantle:Mantle:1.16.5-1.6.115")
     //  runtimeOnly fg.deobf("slimeknights.tconstruct:TConstruct:1.16.5-3.1.1.252")
-    runtimeOnly fg.deobf("maven.modrinth:rubidium:0.5.3")
+    // runtimeOnly fg.deobf("maven.modrinth:rubidium:0.5.3")
 
 }
 

@@ -34,7 +34,7 @@ logoFile="pack.png" #optional
 authors="LopyLuna" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-YIPPEE MY HEAD HURTS NOW LMAO
+YIPPEE WASSUP THIS HURTS MY HEAD LMAO
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.create_dd]] #optional
@@ -60,6 +60,6 @@ YIPPEE MY HEAD HURTS NOW LMAO
 [[dependencies.create_dd]]
 modId="create"
 mandatory=true
-versionRange="[0.5.1.a,)"
+versionRange="[0.5.1.b,)"
 ordering="NONE"
 side="BOTH"
