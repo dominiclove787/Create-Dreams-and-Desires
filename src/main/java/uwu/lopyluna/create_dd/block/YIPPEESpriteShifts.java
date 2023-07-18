@@ -9,9 +9,6 @@ import uwu.lopyluna.create_dd.DDcreate;
 
 public class YIPPEESpriteShifts {
 
-
-
-
     public static final CTSpriteShiftEntry
             MITHRIL_CASING = omni("mithril_casing"),
             BRONZE_CASING = omni("bronze_casing"),

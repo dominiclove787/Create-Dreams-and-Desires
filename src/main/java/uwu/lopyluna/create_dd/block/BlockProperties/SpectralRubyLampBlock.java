@@ -5,7 +5,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -22,6 +21,8 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
+
+import java.util.Random;
 
 
 public class SpectralRubyLampBlock extends Block implements IWrenchable {
@@ -131,7 +132,7 @@ public class SpectralRubyLampBlock extends Block implements IWrenchable {
     }
 
     @Override
-    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRand) {
+    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, Random pRand) {
         boolean isInverted = pState.getValue(INVERTED);
         boolean isPowered = pState.getValue(POWERED);
         updateSignalStrength(pState, pLevel, pPos);
@@ -139,7 +140,6 @@ public class SpectralRubyLampBlock extends Block implements IWrenchable {
             return;
         }
         pLevel.setBlock(pPos, pState, 4);
-        pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
         tickEntity(pLevel, pPos, pState);
         updateSignalStrength(pState, pLevel, pPos);
     }
@@ -158,7 +158,6 @@ public class SpectralRubyLampBlock extends Block implements IWrenchable {
             } else {
                 BlockState blockstate = pState.cycle(INVERTED);
                 pLevel.setBlock(pPos, blockstate, 4);
-                pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
                 updateSignalStrength(blockstate, pLevel, pPos);
                 return InteractionResult.CONSUME;
             }

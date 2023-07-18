@@ -7,7 +7,6 @@ import com.simibubi.create.content.kinetics.transmission.SplitShaftBlockEntity;
 import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -15,6 +14,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.ticks.TickPriority;
 import uwu.lopyluna.create_dd.block.YIPPEEEntityTypes;
+
+import java.util.Random;
 
 
 public class ReversedGearboxBlock extends AbstractEncasedShaftBlock implements IBE<SplitShaftBlockEntity> {
@@ -57,7 +58,7 @@ public class ReversedGearboxBlock extends AbstractEncasedShaftBlock implements I
     }
 
     @Override
-    public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource random) {
+    public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
         BlockEntity be = worldIn.getBlockEntity(pos);
         if (be == null || !(be instanceof KineticBlockEntity))
             return;

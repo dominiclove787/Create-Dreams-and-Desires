@@ -19,6 +19,7 @@ import net.minecraftforge.client.model.data.IModelData;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class BlockcopycatBlockModel extends com.simibubi.create.content.decoration.copycat.CopycatModel {
 
