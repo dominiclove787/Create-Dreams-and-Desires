@@ -10,26 +10,24 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 import java.util.Collections;
 
 public class WOWitsTags {
-
-
-
-    public static <T> TagKey<T> optionalTag(IForgeRegistry<T> registry,
-                                            ResourceLocation id) {
+    public static <T extends IForgeRegistryEntry<T>> TagKey<T> optionalTag(IForgeRegistry<T> registry,
+                                                                           ResourceLocation id) {
         return registry.tags()
-        .createOptionalTagKey(id, Collections.emptySet());
-        }
+                .createOptionalTagKey(id, Collections.emptySet());
+    }
 
-public static <T> TagKey<T> forgeTag(IForgeRegistry<T> registry, String path) {
+    public static <T extends IForgeRegistryEntry<T>> TagKey<T> forgeTag(IForgeRegistry<T> registry, String path) {
         return optionalTag(registry, new ResourceLocation("forge", path));
-        }
+    }
 
-public static TagKey<Block> forgeBlockTag(String path) {
+    public static TagKey<Block> forgeBlockTag(String path) {
         return forgeTag(ForgeRegistries.BLOCKS, path);
-        }
+    }
 
     public enum NameSpace {
         MOD(DDcreate.MOD_ID, false, true),

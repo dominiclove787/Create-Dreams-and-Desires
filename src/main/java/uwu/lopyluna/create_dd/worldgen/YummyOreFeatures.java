@@ -9,6 +9,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
+import uwu.lopyluna.create_dd.WOWitsTags;
 import uwu.lopyluna.create_dd.block.YIPPEE;
 import uwu.lopyluna.create_dd.block.YIPPEEPaletteStoneTypes;
 
@@ -16,10 +17,10 @@ import java.util.List;
 
 public class YummyOreFeatures {
 
-    public static final RuleTest weathered_limestone_replaceable = new TagMatchTest(YummyTags.AllBlockTags.weathered_limestone_replaceable.tag);
-    public static final RuleTest limestone_replaceable = new TagMatchTest(YummyTags.AllBlockTags.limestone_replaceable.tag);
-    public static final RuleTest potassic_replaceable = new TagMatchTest(YummyTags.AllBlockTags.potassic_replaceable.tag);
-    public static final RuleTest gabbro_replaceable = new TagMatchTest(YummyTags.AllBlockTags.gabbro_replaceable.tag);
+    public static final RuleTest weathered_limestone_replaceable = new TagMatchTest(WOWitsTags.AllBlockTags.weathered_limestone_replaceable.tag);
+    public static final RuleTest limestone_replaceable = new TagMatchTest(WOWitsTags.AllBlockTags.limestone_replaceable.tag);
+    public static final RuleTest potassic_replaceable = new TagMatchTest(WOWitsTags.AllBlockTags.potassic_replaceable.tag);
+    public static final RuleTest gabbro_replaceable = new TagMatchTest(WOWitsTags.AllBlockTags.gabbro_replaceable.tag);
 
     public static final List<OreConfiguration.TargetBlockState> OVERWORLD_STONE_BLOBS = List.of(
             OreConfiguration.target(YummyOreFeatures.gabbro_replaceable, YIPPEEPaletteStoneTypes.gabbro.getBaseBlock().get().defaultBlockState()),

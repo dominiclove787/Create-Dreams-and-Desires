@@ -17,7 +17,6 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 import uwu.lopyluna.create_dd.item.ItemProperties.BobTiers;
 
@@ -61,15 +60,7 @@ public class DeforesterAxeItem extends AxeItem {
                 CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, blockpos, itemstack);
             }
 
-            InteractionHand Interactionhand = null;
-            if (!BacktankUtil.canAbsorbDamage(player, getUses))
-                itemstack.hurtAndBreak(1, player, p -> {
-                    assert Interactionhand != null;
-                    p.broadcastBreakEvent(Interactionhand);
-                });
-
             level.setBlock(blockpos, optional3.get(), 11);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, optional3.get()));
             if (!BacktankUtil.canAbsorbDamage(player, getUses)) {
                 itemstack.hurtAndBreak(1, player, (p_150686_) ->
                         p_150686_.broadcastBreakEvent(pContext.getHand()));

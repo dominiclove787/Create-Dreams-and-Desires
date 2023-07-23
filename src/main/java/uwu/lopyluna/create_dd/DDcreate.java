@@ -26,7 +26,6 @@ import uwu.lopyluna.create_dd.item.Pipebomb;
 import uwu.lopyluna.create_dd.item.PipebombTab;
 import uwu.lopyluna.create_dd.rando.DDParticleTypes;
 import uwu.lopyluna.create_dd.recipes.BakingRecipesTypes;
-import uwu.lopyluna.create_dd.worldgen.YummyTags;
 
 
 @Mod(DDcreate.MOD_ID)
@@ -56,7 +55,7 @@ public class DDcreate
         DDParticleTypes.register(eventBus);
         BakingRecipesTypes.register(eventBus);
 
-        YummyTags.init();
+        WOWitsTags.init();
 
         eventBus.addListener(this::clientSetup);
 
