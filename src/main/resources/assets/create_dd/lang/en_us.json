@@ -308,5 +308,8 @@
   "tetra.material.mithril": "Mithril",
   "tetra.material.mithril.prefix": "Mithril",
 
+  "material.create_dd.mithril": "Mithril",
+  "fluid.create_dd.molten_mithril": "Molten Mithril",
+
   "itemGroup.create_dd.base": "§f\uEFb8"
 }

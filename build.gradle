@@ -128,6 +128,10 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven {
+        name = 'Progwm16 maven'
+        url = 'https://dvs1.progwml6.com/files/maven'
+    }
 
     flatDir {
         dirs 'libs'
@@ -135,12 +139,14 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.26'
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
-
+    implementation fg.deobf("slimeknights.tconstruct:TConstruct:${minecraft_version}-${tcon_version}")
+    implementation fg.deobf("slimeknights.mantle:Mantle:${minecraft_version}-${mantle_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 
     //mods

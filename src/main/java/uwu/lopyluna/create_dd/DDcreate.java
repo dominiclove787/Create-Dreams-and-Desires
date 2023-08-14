@@ -21,6 +21,7 @@ import uwu.lopyluna.create_dd.block.YIPPEE;
 import uwu.lopyluna.create_dd.block.YIPPEEEntityTypes;
 import uwu.lopyluna.create_dd.block.YIPPEEPalette;
 import uwu.lopyluna.create_dd.block.YIPPEEPartialModel;
+import uwu.lopyluna.create_dd.compat.CompatibleManager;
 import uwu.lopyluna.create_dd.fluid.SussyWhiteStuff;
 import uwu.lopyluna.create_dd.item.Pipebomb;
 import uwu.lopyluna.create_dd.item.PipebombTab;
@@ -31,7 +32,7 @@ import uwu.lopyluna.create_dd.recipes.BakingRecipesTypes;
 @Mod(DDcreate.MOD_ID)
 public class DDcreate
 {
-    public static final String NAME = "Create: Flavored";
+    public static final String NAME = "Create: Dreams & Desires";
     public static final String MOD_ID = "create_dd";
     public static final String VERSION = "ALPHA.0.0.5a";
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -51,6 +52,7 @@ public class DDcreate
         Pipebomb.register();
         SussyWhiteStuff.register();
         YIPPEEPalette.register();
+        CompatibleManager.visit();
 
         DDParticleTypes.register(eventBus);
         BakingRecipesTypes.register(eventBus);
@@ -83,5 +85,4 @@ public class DDcreate
     public static ResourceLocation asResource(String path) {
         return new ResourceLocation(DDcreate.MOD_ID, path);
     }
-
 }

@@ -1,0 +1,7 @@
+{
+  "loader": "mantle:fluid_texture",
+  "textures": {
+    "still": "create_dd:block/fluid/molten_mithril/still",
+    "flowing": "create_dd:block/fluid/molten_mithril/flowing"
+  }
+}
