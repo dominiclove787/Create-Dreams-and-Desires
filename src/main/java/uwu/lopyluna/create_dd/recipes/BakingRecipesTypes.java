@@ -23,9 +23,9 @@ import java.util.Optional;
 import java.util.function.Supplier;
 
 public enum BakingRecipesTypes implements IRecipeTypeInfo {
-    
-    FREEZING(FreezingRecipe::new),
-    SUPERHEATING(SuperHeatingRecipe::new);
+
+    SUPERHEATING(SuperHeatingRecipe::new),
+    FREEZING(FreezingRecipe::new);
 
 
     private final ResourceLocation id;
