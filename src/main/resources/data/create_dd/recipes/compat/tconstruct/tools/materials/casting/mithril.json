@@ -4,6 +4,6 @@
     "tag": "forge:molten_mithril",
     "amount": 90
   },
-  "temperature": 900,
+  "temperature": 1200,
   "output": "create_dd:mithril"
 }

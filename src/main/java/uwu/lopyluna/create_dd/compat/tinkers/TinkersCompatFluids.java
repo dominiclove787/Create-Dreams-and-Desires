@@ -13,7 +13,6 @@ public class TinkersCompatFluids {
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(DDcreate.MOD_ID);
 
     public static FluidObject<ForgeFlowingFluid> mithril = register("molten_mithril", 1200);
-
     private static FluidObject<ForgeFlowingFluid> register(String name, int temp) {
         String still = String.format(DDcreate.MOD_ID + ":fluid/tinkers/%s/still", name);
         String flow = String.format(DDcreate.MOD_ID + ":fluid/tinkers/%s/flowing", name);

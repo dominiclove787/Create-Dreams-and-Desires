@@ -16,6 +16,6 @@
     "fluid": "create_dd:molten_mithril",
     "amount": 360
   },
-  "temperature": 900,
+  "temperature": 1200,
   "time": 127
 }

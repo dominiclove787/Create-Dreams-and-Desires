@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material_melting",
   "input": "create_dd:mithril",
-  "temperature": 900,
+  "temperature": 1200,
   "result": {
     "fluid": "create_dd:molten_mithril",
     "amount": 90
