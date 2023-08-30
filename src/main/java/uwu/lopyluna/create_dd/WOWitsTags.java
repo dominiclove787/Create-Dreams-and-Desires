@@ -63,6 +63,8 @@ public class WOWitsTags {
         superheating_type,
         freezing_type,
 
+        fan_heaters,
+
         ;
 
         public final TagKey<Block> tag;
