@@ -42,7 +42,7 @@ import java.util.function.Supplier;
 import static com.simibubi.create.compat.jei.CreateJEI.consumeTypedRecipes;
 
 @JeiPlugin
-@SuppressWarnings({"unused", "inline"})
+@SuppressWarnings({"unused", "inline", "removal"})
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class DDcreateJEI implements IModPlugin {
@@ -99,28 +99,17 @@ public class DDcreateJEI implements IModPlugin {
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         DDCategories.forEach(c -> c.registerCatalysts(registration));
 
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "pressing")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.hydraulic_press.get()), type));
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "automatic_packing")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.hydraulic_press.get()), type));
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "packing")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.hydraulic_press.get()), type));
 
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "sawing")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.BRONZE_SAW.get()), type));
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "block_cutting")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.BRONZE_SAW.get()), type));
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "wood_cutting")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.BRONZE_SAW.get()), type));
-
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "fan_washing")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.industrial_fan.get()), type));
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "fan_smoking")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.industrial_fan.get()), type));
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "fan_blasting")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.industrial_fan.get()), type));
-        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "fan_haunting")).ifPresent(type ->
-                registration.addRecipeCatalyst(new ItemStack(YIPPEE.industrial_fan.get()), type));
+        registration.addRecipeCatalyst(YIPPEE.hydraulic_press.asStack(), new ResourceLocation(Create.ID, "pressing"));
+        registration.addRecipeCatalyst(YIPPEE.hydraulic_press.asStack(), new ResourceLocation(Create.ID, "automatic_packing"));
+        registration.addRecipeCatalyst(YIPPEE.hydraulic_press.asStack(), new ResourceLocation(Create.ID, "packing"));
+        registration.addRecipeCatalyst(YIPPEE.BRONZE_SAW.asStack(), new ResourceLocation(Create.ID, "sawing"));
+        registration.addRecipeCatalyst(YIPPEE.BRONZE_SAW.asStack(), new ResourceLocation(Create.ID, "block_cutting"));
+        registration.addRecipeCatalyst(YIPPEE.BRONZE_SAW.asStack(), new ResourceLocation(Create.ID, "wood_cutting"));
+        registration.addRecipeCatalyst(YIPPEE.industrial_fan.asStack(), new ResourceLocation(Create.ID, "fan_washing"));
+        registration.addRecipeCatalyst(YIPPEE.industrial_fan.asStack(), new ResourceLocation(Create.ID, "fan_smoking"));
+        registration.addRecipeCatalyst(YIPPEE.industrial_fan.asStack(), new ResourceLocation(Create.ID, "fan_blasting"));
+        registration.addRecipeCatalyst(YIPPEE.industrial_fan.asStack(), new ResourceLocation(Create.ID, "fan_haunting"));
     }
 
     @Override

@@ -31,6 +31,7 @@ import uwu.lopyluna.create_dd.item.Pipebomb;
 import uwu.lopyluna.create_dd.item.PipebombTab;
 import uwu.lopyluna.create_dd.rando.DDParticleTypes;
 import uwu.lopyluna.create_dd.recipes.BakingRecipesTypes;
+import uwu.lopyluna.create_dd.sounds.LOUDISFUNNY;
 
 
 @Mod(DDcreate.MOD_ID)
@@ -38,7 +39,7 @@ public class DDcreate
 {
     public static final String NAME = "Create: Dreams & Desires";
     public static final String MOD_ID = "create_dd";
-    public static final String VERSION = "BETA.1.0a";
+    public static final String VERSION = "PREBETA.0.1a";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(DDcreate.MOD_ID);
@@ -57,6 +58,7 @@ public class DDcreate
 
         REGISTRATE.registerEventListeners(eventBus);
 
+        LOUDISFUNNY.register(eventBus);
         PipebombTab.init();
         YIPPEEPartialModel.init();
         YIPPEEEntityTypes.register();

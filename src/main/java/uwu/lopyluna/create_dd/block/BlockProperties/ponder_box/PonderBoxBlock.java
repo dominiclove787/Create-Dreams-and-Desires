@@ -2,11 +2,12 @@ package uwu.lopyluna.create_dd.block.BlockProperties.ponder_box;
 
 import com.simibubi.create.foundation.block.IBE;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -15,25 +16,39 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.RandomSource;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 import uwu.lopyluna.create_dd.block.YIPPEEEntityTypes;
-import uwu.lopyluna.create_dd.worldgen.Pondering;
+
+import static net.minecraft.world.level.Level.OVERWORLD;
 
 
 public class PonderBoxBlock extends Block implements IBE<PonderBoxBlockEntity>{
 
-    public PonderBoxBlock(BlockBehaviour.Properties pProperties) {
+
+    private boolean visible;
+
+    public PonderBoxBlock(Properties pProperties, boolean visible) {
         super(pProperties);
+        this.visible = visible;
     }
 
+    public PonderBoxBlock(Properties pProperties) {
+        this(pProperties, false);
+    }
+    @Override
+    public void fillItemCategory(@NotNull CreativeModeTab pCategory, @NotNull NonNullList<ItemStack> pItems) {
+        if (visible)
+            super.fillItemCategory(pCategory, pItems);
+    }
 
     @SuppressWarnings("deprecation")
     @NotNull
     @Override
     public InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult hitResult) {
-        if (pLevel.isClientSide || player.level.dimension() == Pondering.PONDER) return InteractionResult.sidedSuccess(!pLevel.isClientSide);
+        if (pLevel.isClientSide || player.level.dimension() == OVERWORLD) return InteractionResult.sidedSuccess(!pLevel.isClientSide);
 
         BlockEntity entity = pLevel.getBlockEntity(pPos);
         if (entity instanceof PonderBoxBlockEntity) {
